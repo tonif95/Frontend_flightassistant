@@ -48,8 +48,8 @@ function App() {
 
     try {
       // 2. Enviar al Backend
-      // NOTA: Asegúrate que tu backend corre en el puerto 8000
-      const response = await fetch('http://127.0.0.1:8000/chat', {
+      const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
+      const response = await fetch(`${API_URL}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
